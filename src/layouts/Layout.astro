@@ -1,0 +1,67 @@
+---
+// Supports weights 100-900
+// import Noise from '@/components/Noise.astro';
+import SmokeBackground from "@/components/SmokeBackground.astro";
+import "@fontsource-variable/jost";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Evento de boxeo entre streamers." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href="https://lavelada.es/" />
+
+		<meta name="keywords" content="velada, streamers, creadores, boxeo, midudex" />
+
+		<meta name="twitter:card" content="sumary_large_image" />
+		<meta name="twitter:site" content="@infoLaVelada" />
+		<meta name="twitter:creator" content="@midudev" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="https://lavelada.es/og.jpg" />
+
+		<meta name="og:image" content="https://lavelada.es/og.jpg" />
+		<meta name="og:title" content={title} />
+		<meta name="og:description" content={description} />
+		<meta name="og:url" content="https://lavelada.es" />
+		<meta name="og:site_name" content="La Velada 4" />
+		<meta name="og:type" content="website" />
+		<meta name="og:locale" content="es_ES" />
+
+		<meta name="robots" content="index, follow"/>
+		<meta name="googlebot" content="index, follow"/>
+
+		<title>{title}</title>		
+	</head>
+	<body>
+		<!-- <Noise/> este efecto es el que tenia como el efecto de ruido -->
+		<SmokeBackground />
+		<div class="max-w-6xl px-10 pt-20 m-auto">
+			<slot />
+		</div>
+	</body>
+</html>
+<style is:global>
+	html {
+		font-family: "Jost Variable", system-ui, sans-serif;
+		background: #ddd;
+	}
+
+	:root {
+		--color-primary: #ddd;
+		--color-secondary: #333;
+
+		--background-color: #222;
+		--color-twich: #9146ff;
+	}	
+</style>
