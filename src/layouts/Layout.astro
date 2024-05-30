@@ -3,6 +3,7 @@
 // import Noise from '@/components/Noise.astro';
 import SmokeBackground from "@/components/SmokeBackground.astro";
 import "@fontsource-variable/jost";
+import '@fontsource/rock-salt'
 
 interface Props {
 	title: string;
@@ -43,9 +44,8 @@ const { title, description } = Astro.props;
 
 		<title>{title}</title>		
 	</head>
-	<body>
-		<!-- <Noise/> este efecto es el que tenia como el efecto de ruido -->
-		<SmokeBackground />
+	<body>		
+		<!-- <SmokeBackground /> -->
 		<div class="max-w-6xl px-10 pt-20 m-auto">
 			<slot />
 		</div>
@@ -54,7 +54,7 @@ const { title, description } = Astro.props;
 <style is:global>
 	html {
 		font-family: "Jost Variable", system-ui, sans-serif;
-		background: #ddd;
+		background: #222;
 	}
 
 	:root {
@@ -63,5 +63,6 @@ const { title, description } = Astro.props;
 
 		--background-color: #222;
 		--color-twich: #9146ff;
+		--color-accent:#b4cd02;
 	}	
 </style>

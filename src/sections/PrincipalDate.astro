@@ -1,45 +1,101 @@
-<section class="text-primary flex flex-col justify-center items-center gap-4
- mt-20 animate-fade-in animate-delay-300">
+---
+import Action from "@/components/Action.astro";
+import IconMaps from "@/icons/IconMaps.astro";
+---
+
+<section
+  class="text-primary flex flex-col justify-center items-center gap-4
+ mt-20 animate-fade-in animate-delay-300"
+>
   <h2 class="text-2xl font-semibold uppercase">
     28 de abril
     <span aria-hidden class="hidden md:inline mx-1">·</span>
-    <br aria-hidden class="block md:hidden">
+    <br aria-hidden class="block md:hidden" />
     <!-- COMO PODEMOS METER UN SCRIPT AQUI ENVEZ DE COLOCAR -> 7:00 H BO -->
     <span>
       <script is:inline>
-        const END_DATE = 1714521600000
-        const d = new Date(END_DATE)
+        const END_DATE = 1714521600000;
+        const d = new Date(END_DATE);
         const date = d.toLocaleTimeString("es", {
           hour: "2-digit",
-          minute: "2-digit"
-        })
+          minute: "2-digit",
+        });
 
         // get current timezone
-        const tzOffset = d.getTimezoneOffset() / 60 // <- lo dividimos entre 60 xq nos da la diferencia de zona en minutos
-        const diff = tzOffset * -1 // multiplicamos por -1 ya que nos lo da con signo negativo
-        const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`
+        const tzOffset = d.getTimezoneOffset() / 60; // <- lo dividimos entre 60 xq nos da la diferencia de zona en minutos
+        const diff = tzOffset * -1; // multiplicamos por -1 ya que nos lo da con signo negativo
+        const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`;
 
         const TZ_DICTIONARY = {
           "GMT+1": "CET", // <- Central Eurpe time
-        }
+        };
 
-        const tz = TZ_DICTIONARY[gmt] ?? gmt
+        const tz = TZ_DICTIONARY[gmt] ?? gmt;
 
-        const selfScript = document.currentScript
-        selfScript.parentNode.innerHTML = `${date}H ${tz}`
-        </script>
+        const selfScript = document.currentScript;
+        selfScript.parentNode.innerHTML = `${date}H ${tz}`;
+      </script>
     </span>
     <!-- COMO PODEMOS METER UN SCRIPT AQUI ENVEZ DE COLOCAR -> 7:00 H BO -->
-
   </h2>
-  <h3 class="text-xl flex flex-col justify-center items-center">
-    <span>Evento de Presentación</span>
-    <span>Teatro Victoria (Barcelona)</span>
-  </h3>
-  <a 
-    class="uppercase text-xl border border-primary px-4 py-1 hover:bg-primary hover:text-secondary transition duration-500"
-    href="https://www.teatrobarcelona.com"
+  <h3
+    class=`cursor-pointer underline-transition mt-4 mb-2 transition-all duration-300 ease-in-out hover:text-accent`
   >
-    Entradas agotadas
-  </a>
+    <a href="" class="flex justify-center items-center gap-2 text-3xl">
+      <IconMaps />
+      ESTADIO SANTIAGO BERNABÉU
+    </a>
+  </h3>
+  <footer
+    class="flex flex-col flex-wrap gap-8 items-center justify-center md:flex-row"
+  >
+    <div class="basis-1/3 flex flex-col justify-center items-center">
+      <Action
+        as="a"
+        class="text-base w-full"
+        href="https://www.entradas.com/artist/la-velada-del-ano/?affiliate=LVL"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="disponibles al a venta el 11 de abril a las 21:30 (CET), ahora mismo no están disponibles"
+      >
+        <span class="inline-block skew-x-[-10deg]"> Comprar entradas </span>
+      </Action>
+      <span class="font-semibold text-accent">Agotadas!</span>
+    </div>
+    <Action
+      as="a"
+      class="text-base basis-1/3 self-start"
+      href="https://lavelada.store/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ir a la tienda oficial, se abrirá en una nueva pestaña"
+    >
+      <span class="inline-block skew-x-[-10deg]"> Ir a la tienda oficial </span>
+    </Action>
+
+    <Action
+      as="button"
+      class="text-base"
+      rel="noopener noreferrer"
+      aria-label="agregar al calendario se abrirá ventana flotante"
+    >
+      <span class="inline-block skew-x-[-10deg]"> Ir a la tienda oficial </span>
+    </Action>
+  </footer>
 </section>
+
+<style>
+  /* Efecto de subrayado animado */
+  .underline-transition {
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(var(--color-accent) 20%, var(--color-accent) 80%);
+    background-size: 0 3px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+  }
+  .underline-transition:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+  }
+</style>

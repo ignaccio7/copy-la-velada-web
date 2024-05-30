@@ -16,6 +16,11 @@ Para la fuente
 ```
 Y luego seguir los pasos de **https://fontsource.org/fonts/jost/install**
 
+Tambien instalaremos esta fuente:
+```bash
+  pnpm install @fontsource/rock-salt
+```
+
 Para la animacion del fondo threejs
 ```bash
   pnpm install three
@@ -49,3 +54,24 @@ Para la animacion del fondo threejs
 ```bash
   touch {Countdown,Footer,Hero,Info,PrincipalDate}.astro 
 ```
+
+
+# Otros
+
+## Fuente utilizada en la web oficial
+> Atomic Regular
+https://www.fontspring.com/fonts/set-sail-studios/atomic
+
+> Alternatives Font Free`s
+https://fontsource.org/fonts/kaushan-script
+https://fontsource.org/fonts/indie-flower
+https://fontsource.org/fonts/yellowtail
+https://fontsource.org/fonts/rock-salt <- esta seleccionamos
+https://fontsource.org/fonts/just-another-hand
+https://fontsource.org/fonts/calligraffitti
+https://fontsource.org/fonts/arizonia
+https://fontsource.org/fonts/architects-daughter
+https://fontsource.org/fonts/mynerve
+
+Revisar esta fuente es similar pero revisar virus
+https://www.whatfontis.com/FF_Wild-Wolf.font

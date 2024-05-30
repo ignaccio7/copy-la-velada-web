@@ -2,12 +2,14 @@
 import HeroLogo from "@/components/HeroLogo.astro";
 ---
 
-<section class="flex flex-col justify-center items-center gap-9">
-  <span
-    class="text-xl uppercase text-secondary bg-primary px-6 py-1 font-medium animate-fade-in animate-delay-300"
-  >
-    Presentación de la
-  </span>
+<section class="flex flex-col justify-center items-center gap-9 mx-auto relative max-w-[600px]">
+  <h2 class="text-primary text-2xl font-bold font-rock-salt -rotate-6">twich.tv/ibai</h2>
+  <HeroLogo class="text-primary w-full h-auto animate-fade-in-up" />
+  <!-- <HeroLogo class="absolute inset-auto -z-50 blur-0 text-[#f1ffaa] animate-fade-in-up" /> -->
 
-  <HeroLogo class="text-primary w-full h-auto max-w-[600px] animate-fade-in-up" />
+  <div
+    class="absolute inset-0 -z-10 m-auto size-[400px] rounded-full bg-black/55 opacity-90 blur-2xl"
+  ></div>
+
+  <img src="/drawn-x-logo.svg" alt="logo" class="absolute -z-20 inset-auto scale-125">
 </section>

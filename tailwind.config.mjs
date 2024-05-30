@@ -5,12 +5,16 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				'rock-salt': ['Rock Salt', 'cursive']
+			},
 			colors: {
 				// 'primary' : '#fff	',
 				// 'primary' : '#333',
 				'primary': "var(--color-primary)",
 				'secondary' : 'var(--color-secondary)',
-				'twich': 'var(--color-twich)'
+				'twich': 'var(--color-twich)',
+				'accent': 'var(--color-accent)'
 			}
 		},
 	},
